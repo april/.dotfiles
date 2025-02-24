@@ -113,5 +113,11 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Source all my random config files
+for config_file (".zsh"/*.zsh(N)); do
+  source "$config_file"
+done
+
 [[ ! -f ~/.oh-my-zsh/custom/p10k.zsh ]] || source ~/.oh-my-zsh/custom/p10k.zsh
 [[ ! -f ~/.oh-my-zsh/custom/aliases.zsh ]] || source ~/.oh-my-zsh/custom/aliases.zsh
