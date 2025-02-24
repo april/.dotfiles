@@ -119,5 +119,3 @@ for config_file (".zsh"/*.zsh(N)); do
   source "$config_file"
 done
 
-[[ ! -f ~/.oh-my-zsh/custom/p10k.zsh ]] || source ~/.oh-my-zsh/custom/p10k.zsh
-[[ ! -f ~/.oh-my-zsh/custom/aliases.zsh ]] || source ~/.oh-my-zsh/custom/aliases.zsh
