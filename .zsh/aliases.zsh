@@ -1,17 +1,19 @@
 # On OS X, use mdfind -name instead of locate
 if [[ `uname` == "Darwin" ]]; then
-	alias locate="/usr/bin/mdfind -name $@ 2> >(grep --invert-match ' \[UserQueryParser\] ' >&2)"
+  alias locate="/usr/bin/mdfind -name $@ 2> >(grep --invert-match ' \[UserQueryParser\] ' >&2)"
   alias ldd='otool -L'
 fi
 
 # brew install bat difftastic eza
 [[ ! `command -v bat` ]] || alias cat="bat -pp"
-alias calc='python3 -i -c "from math import *"'
 [[ ! `command -v difft` ]] || alias diff="difft"
-alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 [[ ! `command -v eza` ]] || alias l="eza --all --header --links --time-style long-iso --long --sort=modified --git"
-alias ll="l"
 [[ ! `command -v eza` ]] || alias ls="eza"
+
+alias calc='python3 -i -c "from math import *"'
+alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias ll="l"
+
 unalias du 2>/dev/null
 
 h() {
