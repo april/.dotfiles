@@ -10,7 +10,10 @@ fi
 export DISABLE_MAGIC_FUNCTIONS=true
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+if [[ `uname` == "Darwin" ]]; then
+  PATH=/opt/homebrew/bin:/opt/homebrew/opt/ruby/bin:$PATH
+fi
+export PATH=$PATH:$HOME/.local/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -81,7 +84,7 @@ zstyle ':omz:update' frequency 30
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git history-substring-search zsh-autosuggestions macos)
+plugins=(git history-substring-search zsh-autosuggestions macos zoxide)
 
 source $ZSH/oh-my-zsh.sh
 
