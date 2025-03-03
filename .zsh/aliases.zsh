@@ -9,7 +9,7 @@ fi
 [[ ! `command -v difft` ]] || alias diff="difft"
 [[ ! `command -v eza` ]] || alias l="eza --all --header --links --time-style long-iso --long --sort=modified --git"
 [[ ! `command -v eza` ]] || alias ls="eza"
-[[ ! `command -v zoxide` ]] || alias cd="zoxide"
+[[ ! `command -v zoxide` ]] || alias cd="z"
 
 alias calc='python3 -i -c "from math import *"'
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
