@@ -26,7 +26,12 @@ sc() {
 }
 
 headers() {
-  curl -s -o /dev/null -D - "$@" | grep -v -e '^[[:space:]]*$' | tail -n +2 | sort --ignore-case
+  if [[ `command -v bat` ]]
+  then
+    curl -s -o /dev/null -D - "$@" | tail -n +2 | sort --ignore-case | bat -pp -l http --color=always | grep -v '^\s*$'
+  else
+    curl -s -o /dev/null -D - "$@" | grep -v '^\s*$' | tail -n +2 | sort --ignore-case
+  fi
 }
 
 # pretty sudo prompt
