@@ -4,11 +4,12 @@ set bs=indent,start      " allow backspacing over everything in insert mode (exc
 set viminfo='20,\"50     " read/write a .viminfo file, don't store more than 50 lines of registers
 set history=50           " keep 50 lines of command line history
 set ruler                " show the cursor position all the time
-set tabstop=2            " indent 2 spaces
+set ai                   " autoindent what I've indented myself
+set expandtab            " soft tabs
 set shiftwidth=2         " when using >, indent as much as my tabstop
+set tabstop=2            " indent 2 spaces
 set hlsearch             " highlight last highlight
 set nocindent            " turn off c indenting
-set ai                   " autoindent what I've indented myself
 set ruler                " show me where the cursor is
 set rulerformat=%l/%L(%p%%),%c " a better ruler
 set showmatch            " show matching brackets 
