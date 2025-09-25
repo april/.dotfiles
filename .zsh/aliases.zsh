@@ -8,12 +8,22 @@ fi
 [[ ! `command -v bat` ]] || alias cat="bat -pp"
 [[ ! `command -v difft` ]] || alias diff="difft"
 [[ ! `command -v eza` ]] || alias l="eza --all --header --links --time-style long-iso --long --sort=modified --git"
-[[ ! `command -v eza` ]] || alias ls="eza"
 [[ ! `command -v zoxide` ]] || alias cd="z"
+
+# I type ls -lart all the time out of habit
+[[ ! `command -v eza` ]] || unalias ls
+if command -v eza &>/dev/null; then
+  ls() {
+    if [[ "$*" == "-lart" ]]; then
+      command eza -la --sort=newest
+    else
+      command eza "$@"
+    fi
+  }
+fi
 
 alias calc='python3 -i -c "from math import *"'
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias ll="l"
 
 unalias du 2>/dev/null
 
