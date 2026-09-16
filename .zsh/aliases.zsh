@@ -5,7 +5,8 @@ if [[ `uname` == "Darwin" ]]; then
 fi
 
 # brew install bat difftastic eza zoxide
-[[ ! `command -v bat` ]] || alias cat="bat -pp"
+[[ ! `command -v bat` ]] || alias cat="bat -pp"  # it's bat in brew and batcat on linux
+[[ ! `command -v batcat` ]] || alias cat="batcat -pp"
 [[ ! `command -v difft` ]] || alias diff="difft"
 [[ ! `command -v eza` ]] || alias l="eza --all --header --links --time-style long-iso --long --sort=modified --git"
 [[ ! `command -v zoxide` ]] || alias cd="z"
