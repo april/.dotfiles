@@ -13,7 +13,7 @@ export DISABLE_MAGIC_FUNCTIONS=true
 if [[ `uname` == "Darwin" ]]; then
   PATH=/opt/homebrew/bin:/opt/homebrew/opt/ruby/bin:$PATH
 fi
-export PATH=$PATH:$HOME/.local/bin
+export PATH=$PATH:$HOME/.local/bin:$HOME/.cargo/bin
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
