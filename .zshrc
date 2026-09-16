@@ -86,7 +86,7 @@ zstyle ':omz:update' frequency 30
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git history-substring-search zsh-autosuggestions macos zoxide)
 
-source $ZSH/oh-my-zsh.sh
+[[ ! -f $ZSH/oh-my-zsh.sh ]] || source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
