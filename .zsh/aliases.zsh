@@ -12,9 +12,9 @@ fi
 [[ ! `command -v zoxide` ]] || alias cd="z"
 
 # I type ls -lart all the time out of habit
-[[ ! `command -v eza` ]] || unalias ls
 if command -v eza &>/dev/null; then
-  ls() {
+  unalias ls 2>/dev/null
+  function ls {
     if [[ "$*" == "-lart" ]]; then
       command eza -la --sort=newest
     else
