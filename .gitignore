@@ -3,4 +3,5 @@
 *.pyc
 __pycache__
 *.swp
+figma.code-workspace
 Thumbs.db
